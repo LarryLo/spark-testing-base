@@ -28,10 +28,10 @@ trait SparkContextProvider {
   def conf = {
     new SparkConf().
       setMaster("local[*]").
+      setMaster("spark://spark-master:7077").
       setAppName("test").
       set("spark.ui.enabled", "false").
-      set("spark.app.id", appID).
-      set("spark.driver.host", "localhost")
+      set("spark.app.id", appID)
   }
 
 
